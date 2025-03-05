@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cypher 30 </title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main">
+  <header>
+    <img src="https://aiclub-oist.web.app/static/media/ailogo.5b25c3a8e4e6b9c095c7.png" alt="AI Club Logo" class="logo">
+    <h1>Welcome to AI Club </h1>
+  </header>
+
+  
+  <div class="container">
+    <h2>Register for Cypher 30</h2>
+    <form  action="https://formspree.io/f/xanewnnz"  method="POST">
+      <label For="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="enrollment number">Enrollment Number:</label>
+      <input type="text" id="text" name="number" required>
+
+      <label for="college">College Name:</label>
+      <input type="text" id="college" name="college" required>
+
+      <label for="year">Year of Study:</label>
+      <select id="year" name="year" required>
+        <option value="first">First Year</option>
+        <option value="second">Second Year</option>
+        <option value="third">Third Year</option>
+   
+      </select>
+
+
+      
+      <label for="college">Branch:</label>
+      <select id="branch" name="branch" required>
+        <option value="">--Select Your Branch--</option>
+        <option value="cse">Cse</option>
+        <option value="AIML">AIML</option>
+        <option value="CSDS">CSDS</option>
+        <option value="EX">EX</option>
+        <option value="CE">CE</option>
+        <option value="ME">ME</option>
+        <option value="EC">EC</option>
+       
+      
+        
+
+        
+
+
+       
+
+        
+      </select>
+
+      <label for="skills">Skills (Comma-separated):</label>
+      <input type="text" id="skills" name="skills">
+
+      <button type="submit">Submit Registration</button>
+    </form>
+    <div id="result"></div>
+  </div>
+</div>
+ <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  /*background-image: url('https://almashines.s3.dualstack.ap-southeast-1.amazonaws.com/assets/images/cover/456.jpg?r=1'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  margin: 0;
+  padding: 0;*/
+
+
+    
+  }
+
+
+  header {
+  display:block;
+  text-align: center;
+  gap:10px;
+ justify-content:flex-start;
+
+  flex-direction: column;
+  padding: 20px 0;
+  margin-top: 50px;
+
+}
+
+.logo {
+ 
+  width: 60px;  /* Ensures the logo is small */
+  height: auto;
+  margin-bottom: 5px; /* Minimal space between the logo and the text */
+}
+
+
+
+  
+  .container {
+    background-color: #ffffff;
+    padding: 20px;
+    height: 600px;
+    width:600px;
+    
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input, select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  #result {
+    margin-top: 20px;
+    text-align: center;
+    color: green;
+  }
+  
+ </style>
+  <script>document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting the traditional way
+  
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const college = document.getElementById('college').value;
+    const year = document.getElementById('year').value;
+    const skills = document.getElementById('skills').value;
+  
+    // Display success message
+    document.getElementById('result').innerHTML = `
+      <h3>Thank you for registering!</h3>
+      <p>Name: ${name}</p>
+      <p>Email: ${email}</p>
+      <p>College: ${college}</p>
+      <p>Year: ${year}</p>
+      <p>Skills: ${skills}</p>
+    `;
+    
+    // You can also send this data to a backend server using an AJAX request (if needed)
+  });
+  </script>
+</body>
+</html>
